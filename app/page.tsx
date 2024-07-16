@@ -2,6 +2,6 @@
 
 export default function Home() {
   return (
-   <h1 className=" text-red-500">Return my Airbnb-clone project</h1>
+   <h1 className=" text-red-500"> Airbnb-clone! </h1>
   );
 }
