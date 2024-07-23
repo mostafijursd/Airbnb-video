@@ -17,7 +17,7 @@ interface UserMenuProps{
   currentUser?: SafeUser | null;
 }
 const UserMenu:React.FC<UserMenuProps> = ({currentUser}) => {
-  console.log({currentUser});
+ // console.log({currentUser});
   const router=useRouter();
   const registerModal=useRegisterModal();
   const loginModal=useLoginModal();
@@ -46,7 +46,7 @@ Airbnb your Home
 <AiOutlineMenu />
 
 <div className=" hidden md:block">
-<Avatar />
+<Avatar src={currentUser?.image} />
 </div>
 </div>
 </div>

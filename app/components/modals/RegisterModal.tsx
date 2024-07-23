@@ -16,12 +16,13 @@ import Heading from '../Heading';
 import Input from '../inputs/Input';
 import Button from '../Button';
 import toast from 'react-hot-toast';
+import useLoginModal from '@/app/hooks/useLoginModal';
 
 
 const RegisterModal = () => {
 
     const registerModal = useRegisterModal();
-    //const loginModal = useLoginModal();
+    const loginModal =useLoginModal();
    const [isLoading, setIsLoading] = useState(false);
  
    const { 
@@ -58,7 +59,7 @@ const RegisterModal = () => {
   }
   const onToggle = useCallback(() => {
     registerModal.onClose();
-   // loginModal.onOpen();
+    loginModal.onOpen();
   }, [registerModal])
 
   const bodyContent=(
