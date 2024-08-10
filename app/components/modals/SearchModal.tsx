@@ -34,7 +34,7 @@ const [dateRange,setDateRange]=useState<Range>({
 
 const Map=useMemo(()=>dynamic(()=>import('../Map'),{
  ssr:false
-}),[location]);
+}),[]);
 
 const onBank=useCallback(()=>{
   setStep((value)=> value -1)

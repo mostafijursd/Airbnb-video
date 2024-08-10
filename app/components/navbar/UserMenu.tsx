@@ -32,7 +32,7 @@ SetIsOpen((value)=>!value);
   }
   // open rent modal
   rentModal.onOpen();
-  },[currentUser,loginModal])
+  },[currentUser,loginModal,rentModal])
   
   return (
     <div className=" relative">
