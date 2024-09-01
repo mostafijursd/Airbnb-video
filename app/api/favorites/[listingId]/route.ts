@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import getCurrentUser from "@/app/actions/getCurrentUser";
-import prima from '@/app/libs/primadb';
+import prisma from "@/app/libs/primadb";
 
 
 interface IParams{
@@ -24,7 +24,7 @@ export  async function POST(
     let favoriteIds=[...(currentUser.favoriteIds || [])];
     favoriteIds.push(listingId);
 
-    const user=await prima.user.update({
+    const user=await prisma.user.update({
         where:{
             id:currentUser.id
         },
@@ -57,7 +57,7 @@ export async function DELETE(
 
     favoriteIds=favoriteIds.filter((id)=>id !== listingId)
 
-    const user= await prima.user.update({
+    const user= await prisma.user.update({
         where:{
             id:currentUser.id
         },
