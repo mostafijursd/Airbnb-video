@@ -6,6 +6,7 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 export async function POST(
     request: Request
 ){
+    try{
     const currentUser= await getCurrentUser();
     if(!currentUser){
         return NextResponse.error();
@@ -50,4 +51,10 @@ export async function POST(
     });
 
     return NextResponse.json(listing);
+} catch(error){
+    console.error('Error creating listing:', error);
+    // Return a 500 Internal Server Error response in case of failure
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+
+}
 }
